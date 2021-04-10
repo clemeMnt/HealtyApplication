@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HealtCare</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="text_sign_in">I already have an account</string>
+    <string name="welcome">Welcome to HealtCare</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_surname"><![CDATA[Name & Surname]]></string>
+    <string name="email_password"><![CDATA[Email & Password]]></string>
+</resources>
