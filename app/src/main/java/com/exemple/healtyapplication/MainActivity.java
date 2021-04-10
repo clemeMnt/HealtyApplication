@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.exemple.healtyapplication.login.RegistrationActivity;
 import com.exemple.healtyapplication.login.SignActivity;
+import com.google.firebase.auth.FirebaseAuth;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     CarouselView carouselView;
     int[] sampleImages = {R.drawable.undraw_healthy, R.drawable.undraw_personalization, R.drawable.undraw_workout};
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,14 @@ public class MainActivity extends AppCompatActivity {
         carouselView = findViewById(R.id.carouselView);
         carouselView.setPageCount(sampleImages.length);
         carouselView.setImageListener(imageListener);
+        mAuth = FirebaseAuth.getInstance();
 
+        if (mAuth.getCurrentUser() != null) {
+            // User is signed in (getCurrentUser() will be null if not signed in)
+            Intent home = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(home);
+            finish();
+        }
     }
 
     ImageListener imageListener = new ImageListener() {
@@ -45,11 +54,13 @@ public class MainActivity extends AppCompatActivity {
     public void RegistrationPage(View v){
         Intent regis = new Intent(MainActivity.this, RegistrationActivity.class);
         startActivity(regis);
+        finish();
     }
 
     public void LoginPage(View v){
         Intent log = new Intent(MainActivity.this, SignActivity.class);
         startActivity(log);
+        finish();
     }
 
 }
