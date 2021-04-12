@@ -2,8 +2,8 @@ package com.exemple.healtyapplication.login;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -11,23 +11,20 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.exemple.healtyapplication.HomeActivity;
-import com.exemple.healtyapplication.MainActivity;
 import com.exemple.healtyapplication.R;
 import com.exemple.healtyapplication.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.common.collect.Multiset;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.Serializable;
-import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -63,11 +60,11 @@ public class RegistrationActivity extends Activity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                // Sign up success
                                 Toast.makeText(RegistrationActivity.this, "Subscription succed.", Toast.LENGTH_SHORT).show();
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                addUsers(uI, user.getUid());
+                                Toast.makeText(RegistrationActivity.this, "Check your email, you need to verifiy your email first.", Toast.LENGTH_SHORT).show();
 
+                                FirebaseUser uA = mAuth.getCurrentUser();
+                                addUsers(uI, uA);
                                 Intent login = new Intent(RegistrationActivity.this, SignActivity.class);
                                 startActivity(login);
 
@@ -120,15 +117,16 @@ public class RegistrationActivity extends Activity {
         return mBundle;
     }
 
-    private void addUsers(User u, String uid){
+    private void addUsers(User u, FirebaseUser uA){
 
         Map<String, Object> user = new HashMap<>();
-        user.put("uid", uid);
+        user.put("uid", uA.getUid());
         user.put("email", u.getEmail());
         user.put("name", u.getName());
         user.put("surname", u.getSurname());
         user.put("prefix", u.getPrefix());
         user.put("phone", u.getPhone());
+        user.put("", u.getPhone());
 
         // Add a new document with a generated ID
         db.collection("users")
@@ -145,6 +143,22 @@ public class RegistrationActivity extends Activity {
                         Log.w("failled", "Error adding document", e);
                     }
                 });
+
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(u.getName() + u.getSurname())
+                .build();
+
+        uA.updateProfile(profileUpdates)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d("Message", "User profile updated.");
+                        }
+                    }
+                });
+
+        uA.sendEmailVerification();
     }
 
 }

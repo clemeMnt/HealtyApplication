@@ -23,6 +23,11 @@ public class User implements Serializable {
         this.pwd = pwd;
     }
 
+    public User(String email, String pwd) {
+        this.email = email;
+        this.pwd = pwd;
+    }
+
     public String getPwd() {
         return pwd;
     }
