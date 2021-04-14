@@ -12,6 +12,12 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/nav_account"
+        android:name="com.exemple.healtyapplication.ui.account.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account"/>
+
+    <fragment
         android:id="@+id/nav_logout"
         android:name="com.exemple.healtyapplication.ui.logout.LogoutFragment"
         tools:layout="@layout/fragment_logout"/>
@@ -19,6 +25,6 @@
     <activity
         android:id="@+id/nav_manage"
         android:name="com.exemple.healtyapplication.ui.setting.SettingActivity"
-        android:label="Setting"
-        />
+        android:label="Setting" />
+
 </navigation>

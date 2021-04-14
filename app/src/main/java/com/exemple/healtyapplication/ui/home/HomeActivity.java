@@ -1,14 +1,18 @@
-package com.exemple.healtyapplication;
+package com.exemple.healtyapplication.ui.home;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.exemple.healtyapplication.MainActivity;
+import com.exemple.healtyapplication.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -45,6 +49,7 @@ public class HomeActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
         View header = navigationView.getHeaderView(0);
 
+
         textAppBarName = (TextView) header.findViewById(R.id.textViewName);
         textAppBarEmail = (TextView) header.findViewById(R.id.textViewEmail);
         profileImage = (ImageView) header.findViewById(R.id.imageViewProfile);
@@ -61,7 +66,7 @@ public class HomeActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_manage, R.id.nav_notifications)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_manage, R.id.nav_account)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -80,6 +85,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
@@ -89,5 +95,17 @@ public class HomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.nav_account:
+                item.setChecked(true);
+                return true;
+            default:
+                return false;
+        }
     }
 }

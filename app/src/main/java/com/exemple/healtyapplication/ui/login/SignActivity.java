@@ -1,16 +1,15 @@
-package com.exemple.healtyapplication.login;
+package com.exemple.healtyapplication.ui.login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.exemple.healtyapplication.HomeActivity;
+import com.exemple.healtyapplication.ui.home.HomeActivity;
 import com.exemple.healtyapplication.R;
 import com.exemple.healtyapplication.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;

@@ -1,8 +1,7 @@
-package com.exemple.healtyapplication.login;
+package com.exemple.healtyapplication.ui.login;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;

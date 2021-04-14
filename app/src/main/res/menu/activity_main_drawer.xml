@@ -26,9 +26,9 @@
                 android:icon="@drawable/ic_baseline_settings_24"
                 android:title="Tools" />
             <item
-                android:id="@+id/nav_notifications"
-                android:icon="@drawable/ic_baseline_notifications_24"
-                android:title="Notifications" />
+                android:id="@+id/nav_account"
+                android:icon="@drawable/ic_baseline_manage_accounts_24"
+                android:title="Account" />
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_baseline_logout_24"

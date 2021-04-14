@@ -24,13 +24,11 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealtyApplication">
-        <activity android:name=".account.HealthActivity"></activity>
-        <activity android:name=".account.AccountActivity" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.home.HomeActivity"
             android:label="@string/title_activity_home" />
-        <activity android:name=".login.SignActivity" />
-        <activity android:name=".login.RegistrationActivity" />
+        <activity android:name=".ui.login.SignActivity" />
+        <activity android:name=".ui.login.RegistrationActivity" />
         <activity android:name=".ui.setting.SettingActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
