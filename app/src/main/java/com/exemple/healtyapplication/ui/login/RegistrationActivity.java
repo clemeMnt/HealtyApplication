@@ -118,14 +118,22 @@ public class RegistrationActivity extends Activity {
 
     private void addUsers(User u, FirebaseUser uA){
 
-        Map<String, Object> user = new HashMap<>();
+        Map<String, Object> user = new HashMap<String, Object>();
         user.put("uid", uA.getUid());
         user.put("email", u.getEmail());
         user.put("name", u.getName());
         user.put("surname", u.getSurname());
         user.put("prefix", u.getPrefix());
         user.put("phone", u.getPhone());
-        user.put("", u.getPhone());
+        user.put("modify", false);
+        user.put("age", "");
+        user.put("bth", "");
+        user.put("allergies", "");
+        user.put("blodType", "");
+        user.put("weight", "");
+        user.put("height", "");
+        user.put("calPerDay", "");
+        user.put("addresses", "");
 
         // Add a new document with a generated ID
         db.collection("users")

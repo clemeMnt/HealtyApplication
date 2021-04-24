@@ -31,6 +31,7 @@ public class SettingActivity extends AppCompatPreferenceActivity {
         @Override
         public void onCreate(final Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+
             addPreferencesFromResource(R.xml.preferences_setting);
 
             // feedback preference click listener

@@ -45,7 +45,7 @@
     <string name="pref_header_about">About</string>
     <string name="summary_about">HealthCare </string>
     <string name="app_version">1.2</string>
-    <string name="summary_support">Senf some feedback.</string>
+    <string name="summary_support">Contact us by email.</string>
     <string name="title_send_feedback">Send Feedback</string>
     <string name="title_faq">FAQ</string>
     <string name="url_faq">https://github.com/clemeMnt/HealtyApplication/issues</string>
@@ -66,4 +66,23 @@
     <string name="key_notifications_new_message_ringtone">key_notifications_new_message_ringtone</string>
     <string name="key_vibrate">key_vibrate</string>
     <string name="key_send_feedback">key_send_feedback</string>
+    <string name="name_addresses"><![CDATA[Name & Addresses]]></string>
+    <string name="addresses">Addresses</string>
+    <string name="samuel">Samuel</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="_634236750">634236750</string>
+    <string name="healt_parameters">Healt parameters</string>
+    <string name="age">Age</string>
+    <string name="_20">20</string>
+    <string name="date_birthday">Date birthday</string>
+    <string name="_00_00_00">00/00/00</string>
+    <string name="prefix">Prefix</string>
+    <string name="_33">+33</string>
+    <string name="allergies_reactions"><![CDATA[Allergies & Reactions]]></string>
+    <string name="blod_type">Blod type</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="_70_kg">70</string>
+    <string name="_170_cm">170</string>
 </resources>
