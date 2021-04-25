@@ -27,6 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -89,7 +90,7 @@ public class AccountFragment extends Fragment {
 
     private void saveData() {
         final boolean[] b = {false};
-        Map<String, Object> attent = new LinkedHashMap<>();
+        Map<String, Object> attent = new HashMap<>();
 
         attent.put("addresses", addresses.getText().toString());
         attent.put("phone", phone.getText().toString());

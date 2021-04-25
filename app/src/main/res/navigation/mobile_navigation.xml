@@ -15,7 +15,7 @@
     <fragment
         android:id="@+id/nav_food"
         android:name="com.exemple.healtyapplication.ui.food.FoodFragment"
-        android:label="NUtrition"
+        android:label="Nutrition"
         tools:layout="@layout/fragmment_food" >
     </fragment>
 
