@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HealthCare</string>
+    <string name="app_name">HealtCare</string>
     <string name="sign_up">SIGN UP</string>
     <string name="text_sign_in">I already have an account</string>
     <string name="welcome">Welcome to HealtCare</string>
@@ -35,8 +35,6 @@
     <string name="pref_title_ringtone">Ringtone</string>
     <string name="pref_ringtone_silent">Silent</string>
 
-    <string name="default_gallery_storage">My Videos</string>
-    <string name="title_auto_upload">Auto upload</string>
     <string name="summary_upload_over_wifi">Upload the videos when wifi is available</string>
     <string name="title_upload_quality">Upload Quality</string>
     <string name="summary_upload_video_quality">Specify video quality for uploads</string>
@@ -46,8 +44,7 @@
     <string name="summary_about">HealthCare </string>
     <string name="app_version">1.2</string>
     <string name="summary_support">Contact us by email.</string>
-    <string name="title_send_feedback">Send Feedback</string>
-    <string name="title_faq">FAQ</string>
+    <string name="title_send_feedback">Send us some feedback</string>
     <string name="url_faq">https://github.com/clemeMnt/HealtyApplication/issues</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="url_privacy">https://clementmarchais.fr/privacy_policy</string>
@@ -65,7 +62,6 @@
     <string name="notifications_new_message">notifications_new_message</string>
     <string name="key_notifications_new_message_ringtone">key_notifications_new_message_ringtone</string>
     <string name="key_vibrate">key_vibrate</string>
-    <string name="key_send_feedback">key_send_feedback</string>
     <string name="name_addresses"><![CDATA[Name & Addresses]]></string>
     <string name="addresses">Addresses</string>
     <string name="samuel">Samuel</string>

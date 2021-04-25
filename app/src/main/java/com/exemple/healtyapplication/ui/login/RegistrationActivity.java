@@ -1,17 +1,24 @@
 package com.exemple.healtyapplication.ui.login;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import androidx.appcompat.app.ActionBar;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.exemple.healtyapplication.MainActivity;
 import com.exemple.healtyapplication.R;
 import com.exemple.healtyapplication.model.User;
+import com.exemple.healtyapplication.ui.home.HomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,7 +34,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegistrationActivity extends Activity {
+public class RegistrationActivity extends AppCompatActivity {
 
     private EditText inputPwd, inputEmail, inputName, inputSurname, inputPrefix, inputPhone;
     private FirebaseAuth mAuth;
@@ -39,6 +46,15 @@ public class RegistrationActivity extends Activity {
         setContentView(R.layout.activity_registration);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle("Registration");
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            ColorDrawable c = new ColorDrawable(Color.parseColor("#3A647F"));
+            actionBar.setBackgroundDrawable(c);
+            actionBar.show();
+        }
 
         inputEmail = (EditText) findViewById(R.id.input_regis_email);
         inputName = (EditText) findViewById(R.id.input_regis_name);
@@ -166,6 +182,16 @@ public class RegistrationActivity extends Activity {
                 });
 
         uA.sendEmailVerification();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent home = new Intent(RegistrationActivity.this, MainActivity.class);
+        startActivity(home);
+        finish();
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

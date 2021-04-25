@@ -37,13 +37,13 @@
             android:title="@string/title_version" />
 
         <Preference
-            android:key="@string/key_send_feedback"
+            android:key=""
             android:summary="@string/summary_support"
             android:title="@string/title_send_feedback" />
 
         <!-- preference opens url in browser -->
         <Preference
-            android:title="@string/title_faq">
+            android:title="">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="@string/url_faq" />

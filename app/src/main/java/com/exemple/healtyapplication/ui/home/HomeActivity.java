@@ -34,14 +34,15 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private TextView textAppBarName, textAppBarEmail;
     private ImageView profileImage;
-
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
@@ -57,7 +58,6 @@ public class HomeActivity extends AppCompatActivity {
         if(currentUser != null){
             textAppBarEmail.setText(currentUser.getEmail());
             textAppBarName.setText(currentUser.getDisplayName());
-
         }else {
             Toast.makeText(HomeActivity.this, "fail", Toast.LENGTH_SHORT).show();
             currentUser.reload();
@@ -66,7 +66,7 @@ public class HomeActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_manage, R.id.nav_account)
+                R.id.nav_home, R.id.nav_account, R.id.nav_setting, R.id.nav_food, R.id.nav_notes)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -95,17 +95,5 @@ public class HomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.nav_account:
-                item.setChecked(true);
-                return true;
-            default:
-                return false;
-        }
     }
 }

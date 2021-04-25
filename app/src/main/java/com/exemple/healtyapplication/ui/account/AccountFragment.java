@@ -4,11 +4,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -30,6 +32,7 @@ import java.util.Map;
 
 public class AccountFragment extends Fragment {
 
+    Toolbar toolbar;
     private FirebaseAuth mAuth;
     EditText displayName, phone, prefix, age, bth, allergies, blod, weight, height, cal, addresses;
     Button bottom;
@@ -38,11 +41,12 @@ public class AccountFragment extends Fragment {
     View root;
 
 
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         root = inflater.inflate(R.layout.fragment_account, container, false);
-       
+
 
         displayName = (EditText) root.findViewById(R.id.input_acc_name);
         phone = (EditText) root.findViewById(R.id.input_acc_phone);
@@ -71,7 +75,7 @@ public class AccountFragment extends Fragment {
                     saveData();
                     enabledInput(false);
                     try {
-                        Thread.sleep(3000);
+                        Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -152,7 +156,6 @@ public class AccountFragment extends Fragment {
 
                                 //Alllow to set variable if data are add, if not that show classique placeholder
                                 boolean check = doc.getBoolean("modify");
-                                Log.e("Verif", String.valueOf(check));
                                 if(check){
                                     age.setText(doc.getString("age"));
                                     bth.setText(doc.getString("bth"));

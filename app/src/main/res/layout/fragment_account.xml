@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.account.AccountFragment">
+    tools:context=".ui.account.AccountFragment"
+    android:theme="@style/Theme.HealtyApplication">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -24,9 +26,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:hint="@string/name_addresses"
-                style="@style/Theme.HealtyApplication.NoActionBar"
                 android:textColor="@color/Deepblue"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -35,8 +36,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:hint="@string/name"
-                android:textColor="@color/Lightgrey"
-                android:textSize="15sp" />
+                android:textColor="@color/Lightgrey" />
 
             <EditText
                 android:id="@+id/input_acc_name"
@@ -58,8 +58,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:hint="@string/addresses"
-                android:textColor="@color/Lightgrey"
-                android:textSize="15sp" />
+                android:textColor="@color/Lightgrey" />
 
             <EditText
                 android:id="@+id/input_acc_addresses"
@@ -81,7 +80,7 @@
                 android:layout_marginTop="20dp"
                 android:hint="@string/phone_number"
                 android:textColor="@color/Deepblue"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -101,7 +100,7 @@
                         android:layout_marginTop="15dp"
                         android:hint="@string/prefix"
                         android:textColor="@color/Lightgrey"
-                        android:textSize="15sp" />
+                        />
 
                     <EditText
                         android:id="@+id/input_acc_prefix"
@@ -131,7 +130,7 @@
                         android:layout_marginTop="15dp"
                         android:hint="@string/phone_number"
                         android:textColor="@color/Lightgrey"
-                        android:textSize="15sp" />
+                        />
 
                     <EditText
                         android:id="@+id/input_acc_phone"
@@ -157,9 +156,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:hint="@string/healt_parameters"
-                style="@style/Theme.HealtyApplication.NoActionBar"
                 android:textColor="@color/Deepblue"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -179,7 +177,7 @@
                         android:layout_marginTop="15dp"
                         android:hint="@string/age"
                         android:textColor="@color/Lightgrey"
-                        android:textSize="15sp" />
+                        />
 
                     <EditText
                         android:id="@+id/input_acc_age"
@@ -209,7 +207,7 @@
                         android:layout_marginTop="15dp"
                         android:hint="@string/date_birthday"
                         android:textColor="@color/Lightgrey"
-                        android:textSize="15sp" />
+                         />
 
                     <EditText
                         android:id="@+id/input_acc_brth"
@@ -235,7 +233,7 @@
                 android:layout_marginTop="15dp"
                 android:hint="@string/allergies_reactions"
                 android:textColor="@color/Lightgrey"
-                android:textSize="15sp" />
+                 />
 
             <EditText
                 android:id="@+id/input_acc_allergies"
@@ -258,7 +256,7 @@
                 android:layout_marginTop="15dp"
                 android:hint="@string/blod_type"
                 android:textColor="@color/Lightgrey"
-                android:textSize="15sp" />
+                />
 
             <EditText
                 android:id="@+id/input_acc_blodtype"
@@ -292,7 +290,7 @@
                         android:layout_marginTop="15dp"
                         android:hint="@string/weight"
                         android:textColor="@color/Lightgrey"
-                        android:textSize="15sp" />
+                        />
 
                     <EditText
                         android:id="@+id/input_acc_weight"
@@ -331,7 +329,7 @@
                         android:layout_marginTop="15dp"
                         android:hint="@string/height"
                         android:textColor="@color/Lightgrey"
-                        android:textSize="15sp" />
+                        />
 
                     <EditText
                         android:id="@+id/input_acc_height"
@@ -365,7 +363,7 @@
                 android:layout_marginTop="15dp"
                 android:hint="Mimimun of calories"
                 android:textColor="@color/Lightgrey"
-                android:textSize="15sp" />
+                />
 
             <EditText
                 android:id="@+id/input_acc_minCal"

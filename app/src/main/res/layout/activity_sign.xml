@@ -5,103 +5,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:onClick="signInUser"
     tools:context=".ui.login.SignActivity">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/Deepblue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:layout_editor_absoluteY="40dp">
 
-        <TextView
-            android:id="@+id/textheader"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:hint="Sign in to HealtCare"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-    </RelativeLayout>
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="220dp"
                 android:layout_height="200dp"
                 android:layout_marginTop="84dp"
-                android:background="@drawable/undraw_login_front"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_gravity="center"
+                android:background="@drawable/undraw_login_front" />
 
             <TextView
                 android:id="@+id/text_login_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="332dp"
-                android:gravity="center"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="30dp"
                 android:hint="Email"
                 android:padding="3dp"
                 android:textColor="@color/Lightgrey"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.135"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/input_login_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="360dp"
+                android:layout_marginTop="-5dp"
                 android:layout_marginEnd="50dp"
                 android:inputType="textEmailAddress|textNoSuggestions"
                 android:maxLines="1"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/Red"
-                android:textColorLink="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textColorLink="@color/white" />
 
             <TextView
                 android:id="@+id/text_login_pwd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="428dp"
-                android:gravity="center"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="30dp"
                 android:hint="Password"
                 android:padding="3dp"
                 android:textColor="@color/Lightgrey"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.147"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/input_login_pwd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="456dp"
+                android:layout_marginTop="-5dp"
                 android:layout_marginEnd="50dp"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/Red"
                 android:textColorLink="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+               />
 
             <Button
                 android:id="@+id/button2"
@@ -109,18 +81,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="3dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/ic_input_custom"
                 android:onClick="signInUser"
                 android:text="LOGIN"
                 android:textColor="@color/white"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.488"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.847" />
+                />
+
+         </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

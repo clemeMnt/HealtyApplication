@@ -1,14 +1,18 @@
 package com.exemple.healtyapplication.ui.login;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.exemple.healtyapplication.MainActivity;
 import com.exemple.healtyapplication.ui.home.HomeActivity;
 import com.exemple.healtyapplication.R;
 import com.exemple.healtyapplication.model.User;
@@ -30,6 +34,15 @@ public class SignActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign);
         mAuth = FirebaseAuth.getInstance();
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle("Login");
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            ColorDrawable c = new ColorDrawable(Color.parseColor("#3A647F"));
+            actionBar.setBackgroundDrawable(c);
+            actionBar.show();
+        }
 
         inputPwd = (EditText) findViewById(R.id.input_login_pwd);
         inputEmail = (EditText) findViewById(R.id.input_login_email);
@@ -87,6 +100,16 @@ public class SignActivity extends AppCompatActivity {
         mBundle.putBoolean("verif",true);
         mBundle.putSerializable("user", (Serializable) u);
         return mBundle;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent home = new Intent(SignActivity.this, MainActivity.class);
+        startActivity(home);
+        finish();
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

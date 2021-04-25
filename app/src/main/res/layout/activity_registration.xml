@@ -6,32 +6,12 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/Deepblue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textheader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:hint="Sign up to HealtCare"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:layout_marginTop="40dp"
         tools:layout_editor_absoluteY="40dp">
 
         <LinearLayout
@@ -45,9 +25,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:hint="@string/name_surname"
-                style="@style/Theme.HealtyApplication.NoActionBar"
                 android:textColor="@color/Deepblue"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -57,7 +36,7 @@
                 android:layout_marginTop="15dp"
                 android:hint="Name"
                 android:textColor="@color/Lightgrey"
-                android:textSize="15sp" />
+                 />
 
             <EditText
                 android:id="@+id/input_regis_name"
@@ -80,7 +59,7 @@
                 android:layout_marginTop="15dp"
                 android:hint="Surname"
                 android:textColor="@color/Lightgrey"
-                android:textSize="15sp" />
+                />
 
             <EditText
                 android:id="@+id/input_regis_surname"
@@ -103,7 +82,7 @@
                 android:layout_marginTop="20dp"
                 android:hint="@string/email_password"
                 android:textColor="@color/Deepblue"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -112,8 +91,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:hint="Email"
-                android:textColor="@color/Lightgrey"
-                android:textSize="15sp" />
+                android:textColor="@color/Lightgrey" />
 
             <EditText
                 android:id="@+id/input_regis_email"
@@ -136,7 +114,7 @@
                 android:layout_marginTop="15dp"
                 android:hint="Password"
                 android:textColor="@color/Lightgrey"
-                android:textSize="15sp" />
+                 />
 
             <EditText
                 android:id="@+id/input_regis_pwd"
@@ -160,7 +138,7 @@
                 android:layout_marginTop="20dp"
                 android:hint="Phone Number"
                 android:textColor="@color/Deepblue"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -179,8 +157,7 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="15dp"
                         android:hint="Prefix"
-                        android:textColor="@color/Lightgrey"
-                        android:textSize="15sp" />
+                        android:textColor="@color/Lightgrey" />
 
                     <EditText
                         android:id="@+id/input_regis_prefix"
@@ -202,21 +179,21 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="195dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:hint="Phone Number"
                         android:textColor="@color/Lightgrey"
-                        android:textSize="15sp" />
+                        />
 
                     <EditText
                         android:id="@+id/input_regis_phone"
-                        android:layout_width="265dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-10dp"
                         android:layout_marginEnd="30dp"
@@ -245,7 +222,6 @@
                 android:onClick="signUpUser"
                 android:text="Suscribe "
                 android:textColor="@color/white"
-                android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
