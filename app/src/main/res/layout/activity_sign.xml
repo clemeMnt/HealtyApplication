@@ -30,11 +30,13 @@
                 android:id="@+id/text_login_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
+
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="30dp"
-                android:hint="Email"
+                android:text="Email"
                 android:padding="3dp"
-                android:textColor="@color/Lightgrey"
+                android:textColor="@color/black"
                 android:textSize="15sp" />
 
             <EditText
@@ -46,19 +48,17 @@
                 android:layout_marginEnd="50dp"
                 android:inputType="textEmailAddress|textNoSuggestions"
                 android:maxLines="1"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/Red"
-                android:textColorLink="@color/white" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/text_login_pwd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="30dp"
-                android:hint="Password"
+                android:text="Password"
                 android:padding="3dp"
-                android:textColor="@color/Lightgrey"
+                android:textColor="@color/black"
                 android:textSize="15sp" />
 
             <EditText
@@ -70,10 +70,7 @@
                 android:layout_marginEnd="50dp"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/Red"
-                android:textColorLink="@color/white"
-               />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/button2"
@@ -86,8 +83,7 @@
                 android:onClick="signInUser"
                 android:text="LOGIN"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                />
+                android:textSize="15sp" />
 
          </LinearLayout>
     </ScrollView>

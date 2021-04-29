@@ -1,6 +1,7 @@
 package com.exemple.healtyapplication.ui.account;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -33,7 +34,9 @@ import java.util.Map;
 
 public class AccountFragment extends Fragment {
 
+
     Toolbar toolbar;
+    ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
     EditText displayName, phone, prefix, age, bth, allergies, blod, weight, height, cal, addresses;
     Button bottom;
@@ -44,10 +47,11 @@ public class AccountFragment extends Fragment {
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         root = inflater.inflate(R.layout.fragment_account, container, false);
-
+        progressDialog = new ProgressDialog(getContext());
 
         displayName = (EditText) root.findViewById(R.id.input_acc_name);
         phone = (EditText) root.findViewById(R.id.input_acc_phone);
@@ -61,10 +65,10 @@ public class AccountFragment extends Fragment {
         height = (EditText) root.findViewById(R.id.input_acc_height);
         cal = (EditText) root.findViewById(R.id.input_acc_minCal);
         bottom = (Button) root.findViewById(R.id.button_acc);
-        
+        showSpinner();
         enabledInput(false);
-        updateProfiles();
 
+        updateProfiles();
 
         bottom.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +93,6 @@ public class AccountFragment extends Fragment {
     }
 
     private void saveData() {
-        final boolean[] b = {false};
         Map<String, Object> attent = new HashMap<>();
 
         attent.put("addresses", addresses.getText().toString());
@@ -140,14 +143,23 @@ public class AccountFragment extends Fragment {
         }
     }
 
-    private void updateProfiles() {
 
+    private void showSpinner(){
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+    }
+
+
+    private void updateProfiles() {
         db.collection("users").whereEqualTo("uid", mAuth.getUid())
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull com.google.android.gms.tasks.Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
+
                             for (QueryDocumentSnapshot doc : task.getResult()) {
                                 Log.d("OK", doc.getId() + " => " + doc.getData());
                                  String _displayName = doc.getString("name") + " " + doc.getString("surname");
@@ -166,13 +178,19 @@ public class AccountFragment extends Fragment {
                                     height.setText(doc.getString("height"));
                                     cal.setText(doc.getString("calPerDay"));
                                     addresses.setText(doc.getString("addresses"));
+
                                 }
+                                progressDialog.dismiss();
+
                             }
                         } else {
                             Log.w("Error", "Error getting documents.", task.getException());
+                            progressDialog.dismiss();
                         }
                     }
                 });
     }
+
+
 
 }

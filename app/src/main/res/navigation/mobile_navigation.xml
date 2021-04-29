@@ -26,6 +26,13 @@
         tools:layout="@layout/fragment_notes" >
     </fragment>
 
+    <fragment
+        android:id="@+id/nav_detected"
+        android:name="com.exemple.healtyapplication.ui.detected.DetectedFragment"
+        android:label="Activities"
+        tools:layout="@layout/fragment_detected" >
+    </fragment>
+
 
     <fragment
         android:id="@+id/nav_account"

@@ -11,17 +11,14 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
+
 import android.widget.ImageView;
-import android.widget.Toast;
+
 
 import com.exemple.healtyapplication.ui.home.HomeActivity;
 import com.exemple.healtyapplication.ui.login.RegistrationActivity;
 import com.exemple.healtyapplication.ui.login.SignActivity;
-import com.google.android.gms.common.api.GoogleApi;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.fitness.Fitness;
-import com.google.android.gms.fitness.SensorsClient;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;

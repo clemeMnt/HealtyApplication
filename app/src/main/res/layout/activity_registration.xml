@@ -24,8 +24,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:hint="@string/name_surname"
-                android:textColor="@color/Deepblue"
+                android:text="@string/name_surname"
+                android:theme="@style/TextTitle"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -34,32 +34,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
-                android:hint="Name"
-                android:textColor="@color/Lightgrey"
-                 />
+                android:text="Name"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/input_regis_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:layout_marginTop="-10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginEnd="30dp"
-                android:hint="Samuel"
                 android:inputType="text"
                 android:maxLines="1"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/Red"
-                android:textColorLink="@color/white" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
-                android:hint="Surname"
-                android:textColor="@color/Lightgrey"
-                />
+                android:text="Surname"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/input_regis_surname"
@@ -68,19 +63,17 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="-10dp"
                 android:layout_marginEnd="30dp"
-                android:hint="Jackson"
                 android:inputType="text"
                 android:maxLines="1"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/Aqua"
-                android:textColorLink="@color/Lightgrey" />
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:hint="@string/email_password"
+                android:text="@string/email_password"
                 android:textColor="@color/Deepblue"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -90,8 +83,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
-                android:hint="Email"
-                android:textColor="@color/Lightgrey" />
+                android:text="Email"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/input_regis_email"
@@ -100,20 +93,17 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="-10dp"
                 android:layout_marginEnd="30dp"
-                android:hint="samuel.jackson@gmail.com"
                 android:inputType="textEmailAddress|textNoSuggestions"
                 android:maxLines="1"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/Aqua"
-                android:textColorLink="@color/Lightgrey" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
-                android:hint="Password"
-                android:textColor="@color/Lightgrey"
+                android:text="Password"
+                android:textColor="@color/black"
                  />
 
             <EditText
@@ -123,20 +113,18 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="-10dp"
                 android:layout_marginEnd="30dp"
-                android:hint="xxx"
                 android:inputType="textPassword"
                 android:maxLength="9"
                 android:maxLines="1"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/Aqua"
-                android:textColorLink="@color/Lightgrey" />
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:hint="Phone Number"
+                android:text="Phone Number"
                 android:textColor="@color/Deepblue"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -156,8 +144,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="15dp"
-                        android:hint="Prefix"
-                        android:textColor="@color/Lightgrey" />
+                        android:text="Prefix"
+                        android:textColor="@color/black" />
 
                     <EditText
                         android:id="@+id/input_regis_prefix"
@@ -166,7 +154,7 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="-10dp"
                         android:layout_marginEnd="30dp"
-                        android:hint="+33"
+
                         android:maxLines="1"
                         android:maxLength="3"
                         android:inputType="phone"
@@ -187,9 +175,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:hint="Phone Number"
-                        android:textColor="@color/Lightgrey"
-                        />
+                        android:text="Phone Number"
+                        android:textColor="@color/black" />
 
                     <EditText
                         android:id="@+id/input_regis_phone"
@@ -197,14 +184,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-10dp"
                         android:layout_marginEnd="30dp"
-                        android:hint="634236750"
                         android:digits="0123456789"
                         android:maxLength="9"
                         android:inputType="phone"
                         android:maxLines="1"
-                        android:textColor="@color/black"
-                        android:textColorHighlight="@color/Aqua"
-                        android:textColorLink="@color/Lightgrey" />
+                        android:textColor="@color/black" />
 
                 </LinearLayout>
 
