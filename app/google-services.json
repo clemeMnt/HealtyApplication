@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "553979301788",
+    "project_id": "healtyapplication",
+    "storage_bucket": "healtyapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553979301788:android:a4ece239fa453d55198259",
+        "android_client_info": {
+          "package_name": "com.exemple.healtyapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553979301788-dpkuq0aso8uk5iuc9j1tdqg1qnoh8n5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxzHMHVnl2nMjxDgc45K_eDlQ2uwytyGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553979301788-dpkuq0aso8uk5iuc9j1tdqg1qnoh8n5c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

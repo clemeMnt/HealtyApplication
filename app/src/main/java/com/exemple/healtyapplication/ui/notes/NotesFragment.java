@@ -2,12 +2,14 @@ package com.exemple.healtyapplication.ui.notes;
 
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -18,6 +20,7 @@ import androidx.annotation.NonNull;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.exemple.healtyapplication.R;
 
@@ -52,8 +55,8 @@ public class NotesFragment extends Fragment {
     private EditText title, descriptions;
     private TextView titleCard, descriptionsCard;
     private ListView view_list;
-
-    private String idNotes;
+    NoteAdapter adap;
+    ArrayList<Note> notesList = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_notes, container, false);
@@ -89,6 +92,33 @@ public class NotesFragment extends Fragment {
             }
         });
 
+
+        view_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Note _note = (Note) adap.getItem(position);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+                builder.setTitle( _note.getTitle() + " - Notes");
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                         deleteNote(dialog, position, _note.getDocumentId());
+                    }
+                });
+
+                builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+
+                    }
+                });
+
+                builder.show();
+            }
+        });
         return root;
     }
 
@@ -97,15 +127,13 @@ public class NotesFragment extends Fragment {
             .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                 @Override
                 public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                    ArrayList<Note> notesList = new ArrayList<>();
+                        notesList.clear();
                     for(QueryDocumentSnapshot doc : queryDocumentSnapshots){
-                        Log.d("data", doc.toString());
                         Note n= doc.toObject(Note.class);
                         n.setDocumentId(doc.getId());
                         notesList.add(n);
                     }
-
-                    NoteAdapter adap = new NoteAdapter(getActivity(), notesList);
+                    adap = new NoteAdapter(getActivity(), notesList);
                     view_list.setAdapter(adap);
                 }
             });
@@ -116,7 +144,7 @@ public class NotesFragment extends Fragment {
         String _title = title.getText().toString();
         String _description = descriptions.getText().toString();
 
-        if(_title.isEmpty() || _description.isEmpty()){
+        if(_title.isEmpty()){
             Toast.makeText(getActivity(), "Some fiels are empty, try again", Toast.LENGTH_SHORT).show();
         } else {
             HashMap<String, String> notes = new HashMap<>();
@@ -127,59 +155,37 @@ public class NotesFragment extends Fragment {
             docRef.set(notes).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
-                    //TODO SUCCESS
+                    Log.d("Succed", "ok");
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    //TODO FAIL
+                    Toast.makeText(getActivity(), "Error to request notes, try again", Toast.LENGTH_SHORT).show();
 
                 }
             });
         }
     }
 
-    public void editNote(){
-        String _title = title.getText().toString();
-        String _description = descriptions.getText().toString();
 
-        if(_title.isEmpty() || _description.isEmpty()){
-            Toast.makeText(getActivity(), "Some fiels are empty, try again", Toast.LENGTH_SHORT).show();
-        } else {
-            HashMap<String, Object> notes = new HashMap<>();
-            notes.put("title", _title);
-            notes.put("description", _description);
-
-            DocumentReference docRef = db.collection("notes").document(mAuth.getUid()).collection("notes").document(idNotes);
-            docRef.update(notes).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void aVoid) {
-                    //TODO SUCCESS
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    //TODO FAIL
-
-                }
-            });
-        }
-    }
-
-    public void deleteNote(){
-        DocumentReference docRef = db.collection("notes").document(mAuth.getUid()).collection("notes").document(idNotes);
+    public void deleteNote(DialogInterface dialog, int postiton, String id){
+        DocumentReference docRef = db.collection("notes").document(mAuth.getUid()).collection("notes").document(id);
         docRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                //TODO SUCCESS
+               notesList.remove(postiton);
+               dialog.dismiss();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                //TODO FAIL
+
+                Toast.makeText(getActivity(), "Error to delete note, try again", Toast.LENGTH_SHORT).show();
 
             }
         });
+
+        adap.notifyDataSetChanged();
 
     }
 

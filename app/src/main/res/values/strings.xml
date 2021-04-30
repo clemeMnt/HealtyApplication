@@ -81,5 +81,6 @@
     <string name="walking">Walking</string>
     <string name="percent">%1$d%%</string>
     <string name="unidentifiable_activity">Unidentifiable activity: %1$d</string>
+    <string name="textfoodexplain">Food by HealtCare will help yo to calculate your macro nutriments. Entrer a ingredient to have a complete descrptions.</string>
 
 </resources>

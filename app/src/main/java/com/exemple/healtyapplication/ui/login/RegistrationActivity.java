@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -40,6 +42,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText inputPwd, inputEmail, inputName, inputSurname, inputPrefix, inputPhone;
     private FirebaseAuth mAuth;
     FirebaseFirestore db;
+    private Button register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +66,17 @@ public class RegistrationActivity extends AppCompatActivity {
         inputPhone = (EditText) findViewById(R.id.input_regis_phone);
         inputPrefix = (EditText) findViewById(R.id.input_regis_prefix);
         inputPwd = (EditText) findViewById(R.id.input_regis_pwd);
+
+        register = (Button) findViewById(R.id.buttonRegister);
+
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signUpUser(v);
+                hideKeybaord(v);
+            }
+        });
     }
 
     public void signUpUser(View v){
@@ -153,7 +167,6 @@ public class RegistrationActivity extends AppCompatActivity {
         user.put("blodType", "");
         user.put("weight", "");
         user.put("height", "");
-        user.put("calPerDay", "");
         user.put("addresses", "");
 
         // Add a new document with a generated ID
@@ -197,6 +210,11 @@ public class RegistrationActivity extends AppCompatActivity {
         finish();
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void hideKeybaord(View v) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(),0);
     }
 
 }

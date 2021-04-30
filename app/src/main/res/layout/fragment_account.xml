@@ -52,9 +52,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="58dp"
+                    android:layout_marginTop="65dp"
                     android:layout_marginEnd="30dp"
                     android:inputType="text"
+                    android:padding="6dp"
+                    android:background="@drawable/custom_edittext"
                     android:maxLines="1"
                     android:textColor="@color/black" />
 
@@ -72,9 +74,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="138dp"
+                    android:layout_marginTop="145dp"
                     android:layout_marginEnd="30dp"
                     android:inputType="text"
+                    android:padding="6dp"
+                    android:background="@drawable/custom_edittext"
                     android:maxLines="1"
                     android:textColor="@color/black" />
 
@@ -103,7 +107,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="5dp"
-                            android:text="@string/addresses"
+                            android:text="@string/prefix"
                             android:textColor="@color/black" />
 
                         <EditText
@@ -112,22 +116,24 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="30dp"
+                            android:layout_marginTop="5dp"
                             android:digits="0123456789+"
                             android:inputType="phone"
+                            android:padding="6dp"
+                            android:background="@drawable/custom_edittext"
                             android:maxLength="3"
                             android:maxLines="1"
                             android:textColor="@color/black" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="150dp"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
                             android:layout_marginEnd="5dp"
                             android:text="@string/phone_number"
                             android:textColor="@color/black" />
@@ -136,10 +142,12 @@
                             android:id="@+id/input_acc_phone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
                             android:layout_marginEnd="30dp"
+                            android:layout_marginTop="5dp"
                             android:digits="0123456789"
                             android:inputType="phone"
+                            android:padding="6dp"
+                            android:background="@drawable/custom_edittext"
                             android:maxLength="9"
                             android:maxLines="1"
                             android:textColor="@color/black" />
@@ -180,8 +188,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp"
                             android:layout_marginEnd="30dp"
-                            android:inputType="date"
+                            android:inputType="date" android:padding="6dp"
+                            android:background="@drawable/custom_edittext"
+
                             android:maxLength="8"
                             android:maxLines="1"
                             android:textColor="@color/black" />
@@ -207,8 +218,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp"
                             android:layout_marginEnd="30dp"
                             android:digits="0123456789"
+                            android:padding="6dp"
+                            android:background="@drawable/custom_edittext"
                             android:inputType="number"
                             android:maxLength="2"
                             android:maxLines="1"
@@ -233,8 +247,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="448dp"
+                    android:layout_marginTop="455dp"
                     android:layout_marginEnd="30dp"
+                    android:padding="6dp"
+                    android:background="@drawable/custom_edittext"
                     android:inputType="text"
                     android:maxLines="1"
                     android:textColor="@color/black" />
@@ -253,8 +269,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="528dp"
+                    android:layout_marginTop="535dp"
                     android:layout_marginEnd="30dp"
+                    android:padding="6dp"
+                    android:background="@drawable/custom_edittext"
                     android:inputType="text"
                     android:maxLines="1"
                     android:textColor="@color/black" />
@@ -283,10 +301,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp"
                             android:layout_marginEnd="30dp"
                             android:digits="0123456789"
                             android:inputType="number"
-                            android:maxLength="3"
+                            android:maxLength="3" android:padding="6dp"
+                            android:background="@drawable/custom_edittext"
                             android:maxLines="1"
                             android:textColor="@color/black" />
 
@@ -314,12 +334,16 @@
                             android:textColor="@color/black" />
 
                         <EditText
+
                             android:id="@+id/input_acc_weight"
                             android:layout_width="match_parent"
+                            android:layout_marginTop="5dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="30dp"
                             android:digits="0123456789"
+                            android:padding="6dp"
+                            android:background="@drawable/custom_edittext"
                             android:inputType="number"
                             android:maxLength="3"
                             android:maxLines="1"
@@ -337,31 +361,12 @@
                         android:textColor="@color/black" />
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="673dp"
-                    android:text="@string/mimimun_of_calories"
-                    android:textColor="@color/black" />
-
-                <EditText
-                    android:id="@+id/input_acc_minCal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="691dp"
-                    android:layout_marginEnd="30dp"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:textColor="@color/black" />
-
                 <Button
                     android:id="@+id/button_acc"
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="750dp"
+                    android:layout_marginTop="700dp"
                     android:layout_marginBottom="30dp"
                     android:background="@drawable/ic_input_custom"
                     android:text="Modify"

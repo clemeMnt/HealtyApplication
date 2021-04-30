@@ -44,8 +44,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="-5dp"
                 android:layout_marginEnd="50dp"
+                android:padding="6dp"
+                android:background="@drawable/custom_edittext"
                 android:inputType="textEmailAddress|textNoSuggestions"
                 android:maxLines="1"
                 android:textColor="@color/black" />
@@ -66,21 +67,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="-5dp"
+                android:padding="6dp"
+                android:background="@drawable/custom_edittext"
                 android:layout_marginEnd="50dp"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/buttonLOGIN"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/ic_input_custom"
-                android:onClick="signInUser"
                 android:text="LOGIN"
                 android:textColor="@color/white"
                 android:textSize="15sp" />

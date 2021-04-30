@@ -38,7 +38,7 @@ public class AccountFragment extends Fragment {
     Toolbar toolbar;
     ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
-    EditText displayName, phone, prefix, age, bth, allergies, blod, weight, height, cal, addresses;
+    EditText displayName, phone, prefix, age, bth, allergies, blod, weight, height, addresses;
     Button bottom;
     FirebaseFirestore db;
     private boolean _mode = false;
@@ -63,7 +63,6 @@ public class AccountFragment extends Fragment {
         blod = (EditText) root.findViewById(R.id.input_acc_blodtype);
         weight = (EditText) root.findViewById(R.id.input_acc_weight);
         height = (EditText) root.findViewById(R.id.input_acc_height);
-        cal = (EditText) root.findViewById(R.id.input_acc_minCal);
         bottom = (Button) root.findViewById(R.id.button_acc);
         showSpinner();
         enabledInput(false);
@@ -104,7 +103,6 @@ public class AccountFragment extends Fragment {
         attent.put("blodType", blod.getText().toString());
         attent.put("height", height.getText().toString());
         attent.put("weight", weight.getText().toString());
-        attent.put("calPerDay", cal.getText().toString());
         attent.put("modify", true);
 
          db.collection("users").whereEqualTo("uid", mAuth.getUid())
@@ -134,7 +132,6 @@ public class AccountFragment extends Fragment {
         blod.setEnabled(v);
         weight.setEnabled(v);
         height.setEnabled(v);
-        cal.setEnabled(false);
 
         if(!v){
             bottom.setText("Modify");
@@ -176,7 +173,6 @@ public class AccountFragment extends Fragment {
                                     blod.setText(doc.getString("blodType"));
                                     weight.setText(doc.getString("weight"));
                                     height.setText(doc.getString("height"));
-                                    cal.setText(doc.getString("calPerDay"));
                                     addresses.setText(doc.getString("addresses"));
 
                                 }

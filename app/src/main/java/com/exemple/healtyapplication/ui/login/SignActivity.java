@@ -9,6 +9,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.gson.internal.$Gson$Preconditions;
 
 import java.io.Serializable;
 
@@ -28,6 +31,7 @@ public class SignActivity extends AppCompatActivity {
 
     private EditText inputPwd, inputEmail;
     private FirebaseAuth mAuth;
+    private Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,16 @@ public class SignActivity extends AppCompatActivity {
 
         inputPwd = (EditText) findViewById(R.id.input_login_pwd);
         inputEmail = (EditText) findViewById(R.id.input_login_email);
+        login = (Button) findViewById(R.id.buttonLOGIN);
+
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signInUser(v);
+                hideKeybaord(v);
+            }
+        });
     }
 
     public void signInUser(View v){
@@ -110,6 +124,11 @@ public class SignActivity extends AppCompatActivity {
         finish();
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void hideKeybaord(View v) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(),0);
     }
 
 }

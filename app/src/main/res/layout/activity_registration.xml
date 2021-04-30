@@ -41,8 +41,9 @@
                 android:id="@+id/input_regis_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-10dp"
                 android:layout_marginStart="20dp"
+                android:padding="6dp"
+                android:background="@drawable/custom_edittext"
                 android:layout_marginEnd="30dp"
                 android:inputType="text"
                 android:maxLines="1"
@@ -61,7 +62,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="-10dp"
+                android:padding="6dp"
+                android:background="@drawable/custom_edittext"
                 android:layout_marginEnd="30dp"
                 android:inputType="text"
                 android:maxLines="1"
@@ -91,7 +93,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="-10dp"
+                android:padding="6dp"
+                android:background="@drawable/custom_edittext"
                 android:layout_marginEnd="30dp"
                 android:inputType="textEmailAddress|textNoSuggestions"
                 android:maxLines="1"
@@ -103,21 +106,20 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:text="Password"
-                android:textColor="@color/black"
-                 />
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/input_regis_pwd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="-10dp"
+                android:padding="6dp"
+                android:background="@drawable/custom_edittext"
                 android:layout_marginEnd="30dp"
                 android:inputType="textPassword"
                 android:maxLength="9"
                 android:maxLines="1"
-                android:textColor="@color/black"
-                />
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -152,9 +154,9 @@
                         android:layout_width="65dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="-10dp"
+                        android:padding="6dp"
+                        android:background="@drawable/custom_edittext"
                         android:layout_marginEnd="30dp"
-
                         android:maxLines="1"
                         android:maxLength="3"
                         android:inputType="phone"
@@ -180,10 +182,11 @@
 
                     <EditText
                         android:id="@+id/input_regis_phone"
-                        android:layout_width="match_parent"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="-10dp"
                         android:layout_marginEnd="30dp"
+                        android:padding="6dp"
+                        android:background="@drawable/custom_edittext"
                         android:digits="0123456789"
                         android:maxLength="9"
                         android:inputType="phone"
@@ -196,6 +199,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/buttonRegister"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -203,7 +207,6 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="50dp"
                 android:background="@drawable/ic_input_custom"
-                android:onClick="signUpUser"
                 android:text="Suscribe "
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
